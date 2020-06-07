@@ -8,18 +8,18 @@ interface Props {
   navigation: NavigationScreenProp<NavigationState>;
 }
 
-class Blank extends Component<Props, {}> {
+class TestStuff extends Component<Props, {}> {
   render() {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Header title="Blank" leftButtonPress={() => navigation.openDrawer()} />
+        <Header title="Test Stuff Here" leftButtonPress={() => navigation.openDrawer()} />
         <ScrollView contentContainerStyle={styles.contentStyle}>
-          <Text style={styles.textStyle}>Blank Page</Text>
+          <Text style={styles.textStyle}>Test Page</Text>
         </ScrollView>
       </View>
     );
   }
 }
 
-export default Blank;
+export default TestStuff;

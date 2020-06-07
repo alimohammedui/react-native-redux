@@ -10,11 +10,11 @@ import { Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-import Home from "../screens/AppScreens/Home";
-import Blank from "../screens/AppScreens/Blank";
-import SideBar from "../screens/AppScreens/SideBar";
-import Login from "../screens/AuthScreens/Login";
-import AuthLoading from "../screens/AuthLoading";
+import Home from "../screens/AppScreens/Home/home";
+import SideBar from "../screens/AppScreens/SideBar/sideBar";
+import Login from "../screens/AuthScreens/Login/login";
+import AuthLoading from "../screens/AuthLoading/auth";
+import TestStuff from "../screens/AppScreens/TestStuff/testStuff";
 
 const MainStack = createStackNavigator(
   {
@@ -39,7 +39,7 @@ const AuthStack = createStackNavigator(
 const AppStack = createDrawerNavigator(
   {
     MainStack: { screen: MainStack },
-    Blank: { screen: Blank }
+    TestStuff: { screen: TestStuff }
   },
   {
     drawerWidth: width - 50,
