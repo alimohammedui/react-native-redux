@@ -8,7 +8,8 @@ import { AvatarItem } from "../../../components";
 import { logoutUserService } from "../../../redux/services/user";
 import {
   fetchImageData,
-  fetchMoreImageData
+  fetchMoreImageData,
+  testing
 } from "../../../redux/actions/fetch";
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
   fetchMoreImageData: (page?: number, limit?: number) => void;
   imageData: any;
   loading: boolean;
+  test: number
 }
 
 interface itemProp {
@@ -38,9 +40,11 @@ class Home extends Component<Props, State> {
   }
 
   componentDidMount() {
-    const { fetchImageData } = this.props;
+    const { fetchImageData, test } = this.props;
     const { page, limit } = this.state;
     fetchImageData(page, limit);
+   const upd =  testing(test)
+    console.log(upd.payload)
   }
 
   handleLogout = () => {
@@ -86,8 +90,9 @@ class Home extends Component<Props, State> {
 }
 
 const mapStateToProps = (state: any) => ({
-  imageData: state.data,
-  loading: state.loading
+  imageData: state.appinit.data,
+  loading: state.appinit.loading,
+  test: state.test.test
 });
 
 function bindToAction(dispatch: any) {

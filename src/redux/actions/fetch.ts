@@ -4,6 +4,7 @@ import { fetchImageService } from "../services/user";
 export const IMAGE_DATA_FETCHED = "IMAGE_DATA_FETCHED";
 export const DATA_LOADING = "DATA_LOADING";
 export const FETCH_MORE = "FETCH_MORE";
+export const TEST_REDUCER  = "TEST_REDUCER";
 
 export function fetchImageData(page?: number, limit?: number) {
   return (dispatch: Dispatch) => {
@@ -17,6 +18,17 @@ export function fetchImageData(page?: number, limit?: number) {
         dispatch(loading(false));
       });
   };
+}
+
+export const testing = (data: any) => {
+  let newData = [];
+  for (let i=data; i <= 99; i++){
+    newData.push(i)
+  }
+  return {
+      type: TEST_REDUCER,
+      payload: newData   
+  }
 }
 
 export function fetchMoreImageData(page?: number, limit?: number) {
